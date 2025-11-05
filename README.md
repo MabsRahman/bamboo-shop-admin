@@ -6,7 +6,7 @@
 
 ## Overview
 
-The **Bamboo Shop ADMIN API** is the backend service for the upcoming **AMDNIN** online platform.
+The **Bamboo Shop ADMIN API** is the service for the **AMDNIN** online platform.
 
 It manages everything from user authentication to **product management**, **orders**, **payments** and personalized recommendations.
 
