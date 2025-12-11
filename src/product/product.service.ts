@@ -232,14 +232,5 @@ export class ProductService {
     return { message: 'Subscribed to back-in-stock notifications', subscription };
   }
 
-  async unsubscribeBackInStock(userId: number, productId: number) {
-    const deleted = await this.prisma.stockSubscription.deleteMany({
-      where: { userId, productId },
-    });
-
-    if (deleted.count === 0)
-      throw new BadRequestException('No subscription found for this product');
-
-    return { message: 'Unsubscribed from back-in-stock notifications' };
-  }
 }
+ 
