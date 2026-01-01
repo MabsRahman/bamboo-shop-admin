@@ -219,18 +219,6 @@ export class ProductService {
     return { message: 'Product deleted successfully' };
   }
 
-  async subscribeBackInStock(userId: number, productId: number) {
-    const exists = await this.prisma.stockSubscription.findFirst({
-      where: { userId, productId },
-    });
-    if (exists) throw new BadRequestException('Already subscribed for this product');
-
-    const subscription = await this.prisma.stockSubscription.create({
-      data: { userId, productId },
-    });
-
-    return { message: 'Subscribed to back-in-stock notifications', subscription };
-  }
 
 }
  
