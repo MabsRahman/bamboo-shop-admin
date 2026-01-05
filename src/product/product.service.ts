@@ -7,6 +7,7 @@ import { UpdateProductDto } from './dto/update-product.dto';
 export class ProductService {
   constructor(private prisma: PrismaService) {}
 
+  // Create
   async create(dto: CreateProductDto) {
     const product = await this.prisma.product.create({
       data: {
@@ -218,7 +219,5 @@ export class ProductService {
     await this.prisma.product.delete({ where: { id } });
     return { message: 'Product deleted successfully' };
   }
-
-
 }
  
